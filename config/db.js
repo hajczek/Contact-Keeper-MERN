@@ -9,11 +9,11 @@ const connectDB = () => {
       useCreateIndex: true,
       useFindAndModify: false,
     })
-    .then(() => console.log("MongoDB COnnected"))
+    .then(() => console.log("MongoDB Connected"))
     .catch((err) => {
       console.err(err.message);
       process.exit(1);
     });
 };
 
-module.expoerts = connectDB;
+module.exports = connectDB;
