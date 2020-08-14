@@ -47,6 +47,12 @@ router.post(
       user.password = await bcrypt.hash(password, salt);
 
       await user.save();
+
+      const payload = {
+        user: {
+          id: user.id,
+        },
+      };
     } catch (err) {
       console.error(err.message);
       res.status(500).send("Server error");
