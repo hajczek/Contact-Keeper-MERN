@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const bcrypt = require("bcryptjs");
 const { check, validationResult } = require("express-validator/check");
 
 const User = require("../models/Users");
@@ -48,7 +49,7 @@ router.post(
 
       res.send("User saved");
     } catch (err) {
-      console.err(err.message);
+      console.error(err.message);
       res.status(500).send("Server error");
     }
   }
