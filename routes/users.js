@@ -19,13 +19,27 @@ router.post(
       min: 6,
     }),
   ],
-  (req, res) => {
+  async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
 
-    res.send("passed");
+    const { name, email, passowrd } = req.body;
+
+    try {
+      let user = await User.findOne({ email });
+
+      if (user) {
+        return res.statud(400).json({ msg: "User already exist" });
+      }
+
+      user = new User({
+        name,
+        email,
+        password,
+      });
+    } catch (err) {}
   }
 );
 
