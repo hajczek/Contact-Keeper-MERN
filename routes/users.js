@@ -45,7 +45,12 @@ router.post(
       user.password = await bcrypt.hash(password, salt);
 
       await user.save();
-    } catch (err) {}
+
+      res.send("User saved");
+    } catch (err) {
+      console.err(err.message);
+      res.status(500).send("Server error");
+    }
   }
 );
 
