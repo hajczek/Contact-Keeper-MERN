@@ -41,6 +41,24 @@ router.post(
       if (!isMatch) {
         return res.status(400).json({ msg: "Invalid Credentials" });
       }
+
+      const payload = {
+        user: {
+          id: user.id,
+        },
+      };
+
+      jwt.sign(
+        payload,
+        config.get("jwtSecret"),
+        {
+          expiresIn: 3600000,
+        },
+        (err, token) => {
+          if (err) throw err;
+          res.json({ token });
+        }
+      );
     } catch (err) {}
   }
 );
