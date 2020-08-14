@@ -15,8 +15,15 @@ router.get("/", (req, res) => {
 // @route       POST api/auth
 // @desc        Auth user & get token
 // @access      Public
-router.post("/", (req, res) => {
-  res.send("Login user");
-});
+router.post(
+  "/",
+  [
+    check("email", "Please include a valid email").isEmail(),
+    check("password", "Password is required").exists(),
+  ],
+  (req, res) => {
+    res.send("Login user");
+  }
+);
 
 module.exports = router;
