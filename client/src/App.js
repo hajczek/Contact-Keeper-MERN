@@ -12,8 +12,8 @@ const App = () => {
         <Navbar />
         <div className="container">
           <Switch>
-            <Route exact path="/" component="Home" />
-            <Route exact path="/about" component="About" />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
           </Switch>
         </div>
       </Fragment>
