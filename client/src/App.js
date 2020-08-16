@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import "./App.css";
@@ -6,10 +6,10 @@ import "./App.css";
 const App = () => {
   return (
     <Router>
-      <div className="App">
+      <Fragment>
         <Navbar />
         My app
-      </div>
+      </Fragment>
     </Router>
   );
 };
