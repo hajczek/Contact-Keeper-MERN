@@ -9,14 +9,15 @@ const Contact = require("../models/Contacts");
 // @route       GET api/contacts
 // @desc        Get all user contacts
 // @access      Private
-router.get("/", auth, (req, res) => {
-  try{
-    const contacts = await Contact.find({ user: req.user.id }).sort({ date: -1 });
+router.get("/", auth, async (req, res) => {
+  try {
+    const contacts = await Contact.find({ user: req.user.id }).sort({
+      date: -1,
+    });
     res.json(contacts);
-  }
-  catch(err) {
+  } catch (err) {
     console.error(err.message);
-    res.status(500).send('Server error');
+    res.status(500).send("Server Error");
   }
 });
 
