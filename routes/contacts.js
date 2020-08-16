@@ -59,7 +59,7 @@ router.post(
 router.put("/:id", auth, async (req, res) => {
   const { name, email, phone, type } = req.body;
 
-  // Build contact object
+  // Build contact object - check if needed elements are included and then add to the contactFields
   const contactFields = {};
   if (name) contactFields.name = name;
   if (email) contactFields.email = email;
