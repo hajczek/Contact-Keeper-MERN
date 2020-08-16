@@ -34,6 +34,20 @@ router.post(
     }
 
     const { name, email, phone, type } = req.body;
+
+    try {
+      const newContact = new Contact({
+        name,
+        email,
+        phone,
+        type,
+        user: req.user.id
+      });
+
+      const contact = await newContact.save();
+      res.json(contact);
+    }
+    catch(err){}
   }
 );
 
