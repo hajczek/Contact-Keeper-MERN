@@ -11,3 +11,31 @@ import {
   FILTER_CONTACTS,
   CLEAR_FILTER,
 } from "../types";
+
+const ContactState = (props) => {
+  const initialState = {
+    contacts: [
+      {
+        id: 1,
+        name: "Jill Johnsons",
+        email: "jill@gmail.com",
+        phone: 111 - 111 - 1111,
+        type: "personal",
+      },
+      {
+        id: 2,
+        name: "Jim Johnsons",
+        email: "jim@gmail.com",
+        phone: 222 - 111 - 1111,
+        type: "personal",
+      },
+      {
+        id: 3,
+        name: "Jill Mellissy",
+        email: "mellissy@gmail.com",
+        phone: 333 - 111 - 1111,
+        type: "professional",
+      },
+    ],
+  };
+};
