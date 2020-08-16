@@ -24,9 +24,13 @@ router.get("/", auth, async (req, res) => {
 // @route       POST api/contacts
 // @desc        Add new contact
 // @access      Private
-router.post("/", (req, res) => {
-  res.send("Add contact");
-});
+router.post(
+  "/",
+  [auth, [check("name", "Name is required").now().isEmpty()]],
+  (req, res) => {
+    res.send("Add contact");
+  }
+);
 
 // @route       PUT api/contacts/:id
 // @desc        Update contact
