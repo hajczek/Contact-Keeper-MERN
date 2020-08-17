@@ -30,16 +30,24 @@ const ContactForm = () => {
   return (
     <form onSubmit={onSubmit}>
       <h2>Add Contact</h2>
-      <input type="text" placeholder="Name" value={name} onChange={onChange} />
+      <input
+        type="text"
+        placeholder="Name"
+        name="name"
+        value={name}
+        onChange={onChange}
+      />
       <input
         type="email"
         placeholder="Email"
+        name="email"
         value={email}
         onChange={onChange}
       />
       <input
         type="text"
         placeholder="Phone"
+        name="phone"
         value={phone}
         onChange={onChange}
       />
@@ -61,7 +69,8 @@ const ContactForm = () => {
       />{" "}
       Professional
       <div>
-        <input type="submit" value="Add Contact" />
+        {/* <input type="submit" value="Add Contact" /> */}
+        <button>Add Contact</button>
       </div>
     </form>
   );
