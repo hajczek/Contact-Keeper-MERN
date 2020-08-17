@@ -33,6 +33,10 @@ const ContactItem = ({ contact }) => {
           </li>
         )}
       </ul>
+      <p>
+        <button>Edit</button>
+        <button>Delete</button>
+      </p>
     </div>
   );
 };
