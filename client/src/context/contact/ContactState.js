@@ -75,6 +75,7 @@ const ContactState = (props) => {
         addContact,
         deleteContact,
         setCurrent,
+        clearCurrent,
       }}
     >
       {props.children}
