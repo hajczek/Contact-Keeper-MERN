@@ -84,7 +84,10 @@ const ContactForm = () => {
       />{" "}
       Professional
       <div>
-        <input type="submit" value={current ? "Edit Contact" : "Add Contact"} />
+        <input
+          type="submit"
+          value={current ? "Update Contact" : "Add Contact"}
+        />
       </div>
     </form>
   );
