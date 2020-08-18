@@ -14,13 +14,15 @@ const Contacts = () => {
 
   return (
     <Fragment>
-      {filtered !== null
-        ? filtered.map((contact) => (
-            <ContactItem key={contact.id} contact={contact} />
-          ))
-        : contacts.map((contact) => (
-            <ContactItem key={contact.id} contact={contact} />
-          ))}
+      <TransitionGroup>
+        {filtered !== null
+          ? filtered.map((contact) => (
+              <ContactItem key={contact.id} contact={contact} />
+            ))
+          : contacts.map((contact) => (
+              <ContactItem key={contact.id} contact={contact} />
+            ))}
+      </TransitionGroup>
     </Fragment>
   );
 };
