@@ -44,7 +44,7 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={onSubmit}>
-      <h2>Add Contact</h2>
+      <h2>{current ? "Edit Contact" : "Add Contact"}</h2>
       <input
         type="text"
         placeholder="Name"
