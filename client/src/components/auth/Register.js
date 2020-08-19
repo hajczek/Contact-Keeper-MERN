@@ -12,10 +12,15 @@ const Register = () => {
 
   const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
 
+  onSubmit = (e) => {
+    e.preventDefault();
+    console.log("Register submit");
+  };
+
   return (
     <div>
       <h1>Account Register</h1>
-      <form>
+      <form onSubmit={onSubmit}>
         <div>
           <label htmlFor="name">Name</label>
           <input type="text" name="name" value={name} onChange={onChange} />
