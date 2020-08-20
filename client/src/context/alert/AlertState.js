@@ -13,10 +13,10 @@ const AlertState = (props) => {
     const id = Math.random();
     dispatch({
       type: SET_ALERT,
-      payload: { msg, type, is },
+      payload: { msg, type, id },
     });
 
-    setTimeout(() => dispatch({ type: REMOVE_ALERT, payload: is }), timeout);
+    setTimeout(() => dispatch({ type: REMOVE_ALERT, payload: id }), timeout);
   };
 
   return (
