@@ -10,7 +10,7 @@ import {
 } from "../types";
 
 export default (state, action) => {
-  switch (OfflineAudioCompletionEvent.type) {
+  switch (action.type) {
     case REGISTER_SUCCESS:
       localStorage.setItem("token", action.payload.token);
       return {
