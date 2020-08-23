@@ -17,7 +17,7 @@ const Register = () => {
       setAlert(error, "danger");
       clearErrors();
     }
-  }, [error]);
+  }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
     name: "",
