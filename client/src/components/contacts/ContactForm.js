@@ -38,13 +38,7 @@ const ContactForm = () => {
     } else {
       updateContact(contact);
     }
-    addContact(contact);
-    setContact({
-      name: "",
-      email: "",
-      phone: "",
-      type: "personal",
-    });
+    clearAll();
   };
 
   const clearAll = () => {
