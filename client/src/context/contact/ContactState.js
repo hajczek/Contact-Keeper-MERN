@@ -38,8 +38,10 @@ const ContactState = (props) => {
         payload: res.data,
       });
     } catch (err) {
-      dispatch({ type: CONTACT_ERROR });
-      payload: err.response.msg;
+      dispatch({
+        type: CONTACT_ERROR,
+        payload: err.response.msg,
+      });
     }
   };
 
