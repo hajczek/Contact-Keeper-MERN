@@ -22,7 +22,7 @@ export default (state, action) => {
     case ADD_CONTACT:
       return {
         ...state,
-        contacts: [...state.contacts],
+        contacts: [action.payload, ...state.contacts],
         loading: false,
       };
     case UPDATE_CONTACT:
