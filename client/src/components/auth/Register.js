@@ -1,6 +1,6 @@
-import React, { useState, useContext, useEffect } from "react";
-import AlertContext from "../../context/alert/alertContext";
-import AuthContext from "../../context/auth/authContext";
+import React, { useState, useContext, useEffect } from 'react';
+import AlertContext from '../../context/alert/alertContext';
+import AuthContext from '../../context/auth/authContext';
 
 const Register = (props) => {
   const alertContext = useContext(AlertContext);
@@ -11,20 +11,20 @@ const Register = (props) => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      props.history.push("/");
+      props.history.push('/');
     }
-    if (error === "User already exist") {
-      setAlert(error, "danger");
+    if (error === 'User already exist') {
+      setAlert(error, 'danger');
       clearErrors();
     }
     // eslint-disable-next-line
   }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
-    name: "",
-    email: "",
-    password: "",
-    password2: "",
+    name: '',
+    email: '',
+    password: '',
+    password2: '',
   });
 
   const { name, email, password, password2 } = user;
@@ -33,10 +33,10 @@ const Register = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (name === "" || email === "" || password === "") {
-      setAlert("Please enter all fields", "danger");
+    if (name === '' || email === '' || password === '') {
+      setAlert('Please enter all fields', 'danger');
     } else if (password !== password2) {
-      setAlert("Password do not match", "danger");
+      setAlert('Password do not match', 'danger');
     } else {
       register({
         name,
@@ -48,51 +48,51 @@ const Register = (props) => {
 
   return (
     <div>
-      <h1>Account Register</h1>
-      <form onSubmit={onSubmit}>
+      <h2>Account Register</h2>
+      <form onSubmit={onSubmit} className='register'>
         <div>
-          <label htmlFor="name">Name</label>
+          <label htmlFor='name'>Name</label>
           <input
-            type="text"
-            name="name"
+            type='text'
+            name='name'
             value={name}
             onChange={onChange}
             required
           />
         </div>
         <div>
-          <label htmlFor="email">Email Address</label>
+          <label htmlFor='email'>Email Address</label>
           <input
-            type="email"
-            name="email"
+            type='email'
+            name='email'
             value={email}
             onChange={onChange}
             required
           />
         </div>
         <div>
-          <label htmlFor="password">Password</label>
+          <label htmlFor='password'>Password</label>
           <input
-            type="password"
-            name="password"
+            type='password'
+            name='password'
             value={password}
             onChange={onChange}
             required
-            minLength="6"
+            minLength='6'
           />
         </div>
         <div>
-          <label htmlFor="password2">Confirm Password</label>
+          <label htmlFor='password2'>Confirm Password</label>
           <input
-            type="password"
-            name="password2"
+            type='password'
+            name='password2'
             value={password2}
             onChange={onChange}
             required
-            minLength="6"
+            minLength='6'
           />
         </div>
-        <input type="submit" value="Register" />
+        <input type='submit' value='Register' />
       </form>
     </div>
   );

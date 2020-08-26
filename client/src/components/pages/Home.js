@@ -1,8 +1,8 @@
-import React, { useContext, useEffect } from "react";
-import Contacts from "../contacts/Contacts";
-import ContactForm from "../contacts/ContactForm";
-import ContactFilter from "../contacts/ContactFilter";
-import AuthContext from "../../context/auth/authContext";
+import React, { useContext, useEffect } from 'react';
+import Contacts from '../contacts/Contacts';
+import ContactForm from '../contacts/ContactForm';
+import ContactFilter from '../contacts/ContactFilter';
+import AuthContext from '../../context/auth/authContext';
 
 const Home = () => {
   const authContext = useContext(AuthContext);
@@ -13,7 +13,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className='content'>
       <div>
         <ContactForm />
       </div>

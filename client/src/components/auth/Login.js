@@ -44,7 +44,7 @@ const Login = (props) => {
   return (
     <div>
       <h2>Account Login</h2>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className='login'>
         <div>
           <label htmlFor='email'>Email Address</label>
           <input
