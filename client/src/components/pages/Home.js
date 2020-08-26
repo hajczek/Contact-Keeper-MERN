@@ -17,7 +17,7 @@ const Home = () => {
       <div>
         <ContactForm />
       </div>
-      <div>
+      <div className='contactsBox'>
         <ContactFilter />
         <Contacts />
       </div>
