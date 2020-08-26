@@ -18,6 +18,11 @@ body {
   flex-direction: column;
 }
 
+button:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
 /* Navbar */
 .navbar {
   display: flex;
@@ -77,6 +82,7 @@ body {
 
 input {
   padding: 2px;
+  font-size: 1.1rem;
 }
 
 input[type='submit'] {
@@ -98,7 +104,7 @@ input[type='submit']:hover {
 
 .content div {
   display: flex;
-  width: 50%;
+  width: 100%;
   justify-content: center;
 }
 
@@ -121,11 +127,26 @@ input[type='submit']:hover {
   padding: 5px;
 }
 
+.addContact input[type='submit'] {
+  background-color: #d31262;
+  border: 0;
+  color: #fff;
+  font-size: 1.3rem;
+  padding: 10px 0;
+  width: 100%;
+}
+
 .contactsBox {
   display: flex;
   flex-direction: column;
   align-self: flex-start;
   width: 50%;
+}
+
+.contactsBox div:last-child {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 /* Animation (Add After) */

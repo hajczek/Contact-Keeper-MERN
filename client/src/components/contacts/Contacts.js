@@ -1,8 +1,8 @@
-import React, { useContext, Fragment, useEffect } from "react";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
-import ContactContext from "../../context/contact/contactContext";
-import ContactItem from "./ContactItem";
-import Spinner from "../layout/Spinner";
+import React, { useContext, Fragment, useEffect } from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import ContactContext from '../../context/contact/contactContext';
+import ContactItem from './ContactItem';
+import Spinner from '../layout/Spinner';
 
 const Contacts = () => {
   const contactContext = useContext(ContactContext);
@@ -24,12 +24,12 @@ const Contacts = () => {
         <TransitionGroup>
           {filtered !== null
             ? filtered.map((contact) => (
-                <CSSTransition key={contact._id} timeout={500} className="item">
+                <CSSTransition key={contact._id} timeout={500} className='item'>
                   <ContactItem contact={contact} />
                 </CSSTransition>
               ))
             : contacts.map((contact) => (
-                <CSSTransition key={contact._id} timeout={500} className="item">
+                <CSSTransition key={contact._id} timeout={500} className='item'>
                   <ContactItem contact={contact} />
                 </CSSTransition>
               ))}

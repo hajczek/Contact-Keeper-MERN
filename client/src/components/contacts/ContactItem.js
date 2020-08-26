@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
-import PropTypes from "prop-types";
-import ContactContext from "../../context/contact/contactContext";
+import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
+import ContactContext from '../../context/contact/contactContext';
 
 const ContactItem = ({ contact }) => {
   const contactContext = useContext(ContactContext);
@@ -14,39 +14,33 @@ const ContactItem = ({ contact }) => {
   };
 
   return (
-    <div
-      style={{
-        display: "block",
-        width: "250px",
-        backgroundColor: "#ddd",
-        padding: "20px",
-        marginBottom: "10px",
-      }}
-    >
+    <div style={contactItem}>
       <h3>
-        {name}{" "}
-        <span
-          style={{ float: "right" }}
-          className={type === "professional" ? "success" : "primary"}
-        >
+        {name}{' '}
+        <span style={type === 'professional' ? professional : personal}>
           {type.charAt(0).toUpperCase() + type.slice(1)}
         </span>
       </h3>
-      <ul className="list" style={{ listStyleType: "none" }}>
+      <ul className='list' style={list}>
         {email && (
           <li>
-            <i className="fas fa-envelope-open"></i> {email}
+            <i className='fas fa-envelope-open'></i>{' '}
+            <span style={emailAddress}>{email}</span>
           </li>
         )}
         {phone && (
           <li>
-            <i className="fas fa-phone"></i> {phone}
+            <i className='fas fa-phone'></i> <strong>{phone}</strong>
           </li>
         )}
       </ul>
       <p>
-        <button onClick={() => setCurrent(contact)}>Edit</button>
-        <button onClick={onDelete}>Delete</button>
+        <button onClick={() => setCurrent(contact)} style={button}>
+          Edit
+        </button>
+        <button onClick={onDelete} style={button}>
+          Delete
+        </button>
       </p>
     </div>
   );
@@ -54,6 +48,47 @@ const ContactItem = ({ contact }) => {
 
 ContactItem.propTypes = {
   contact: PropTypes.object.isRequired,
+};
+
+const contactItem = {
+  display: 'block',
+  width: '48%',
+  backgroundColor: '#eee',
+  padding: '20px',
+  marginBottom: '10px',
+  fontSize: '1.1rem',
+  lineHeight: '1.6',
+};
+
+const professional = {
+  float: 'right',
+  fontSize: '0.9rem',
+  color: '#444',
+};
+
+const personal = {
+  float: 'right',
+  fontSize: '0.9rem',
+  color: 'green',
+};
+
+const list = {
+  listStyleType: 'none',
+};
+
+const emailAddress = {
+  color: 'blue',
+};
+
+const button = {
+  padding: '5px',
+  width: '100px',
+  marginTop: '10px',
+  marginRight: '10px',
+  backgroundColor: '#777',
+  border: 'none',
+  color: '#fff',
+  fontSize: '1.1rem',
 };
 
 export default ContactItem;
