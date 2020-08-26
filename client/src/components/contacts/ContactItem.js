@@ -57,6 +57,7 @@ const contactItem = {
   fontSize: '1.1rem',
   lineHeight: '1.6',
   justifyContent: 'space-between',
+  flexWrap: 'wrap',
 };
 
 const professional = {

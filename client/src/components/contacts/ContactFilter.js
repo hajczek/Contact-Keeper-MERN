@@ -43,6 +43,7 @@ const contactsFilter = {
   background: '#eee',
   padding: '20px 0',
   marginBottom: '20px',
+  marginTop: '20px',
 };
 
 const form = {

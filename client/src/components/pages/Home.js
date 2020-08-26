@@ -27,6 +27,7 @@ const Home = () => {
 
 const content = {
   display: 'flex',
+  flexWrap: 'wrap',
 };
 
 const box = {

@@ -72,6 +72,7 @@ const navbar = {
   padding: '20px',
   color: '#fff',
   marginBottom: '40px',
+  flexWrap: 'wrap',
 };
 
 const ul = {
