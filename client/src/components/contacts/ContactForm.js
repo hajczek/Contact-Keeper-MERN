@@ -96,11 +96,22 @@ const ContactForm = () => {
       </div>
       {current && (
         <div>
-          <button onClick={clearAll}>Clear</button>
+          <button onClick={clearAll} style={button}>
+            Clear
+          </button>
         </div>
       )}
     </form>
   );
+};
+
+const button = {
+  width: '100%',
+  backgroundColor: '#777',
+  border: '0',
+  color: '#fff',
+  fontSize: '1.3rem',
+  padding: '10px 0',
 };
 
 export default ContactForm;

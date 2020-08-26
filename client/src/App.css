@@ -18,6 +18,11 @@ body {
   flex-direction: column;
 }
 
+button,
+input[type='submit'] {
+  outline: none;
+}
+
 button:hover {
   cursor: pointer;
   opacity: 0.7;
