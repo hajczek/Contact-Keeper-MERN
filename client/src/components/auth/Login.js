@@ -1,6 +1,6 @@
-import React, { useState, useContext, useEffect } from "react";
-import AlertContext from "../../context/alert/alertContext";
-import AuthContext from "../../context/auth/authContext";
+import React, { useState, useContext, useEffect } from 'react';
+import AlertContext from '../../context/alert/alertContext';
+import AuthContext from '../../context/auth/authContext';
 
 const Login = (props) => {
   const alertContext = useContext(AlertContext);
@@ -11,18 +11,18 @@ const Login = (props) => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      props.history.push("/");
+      props.history.push('/');
     }
-    if (error === "Invalid Credentials") {
-      setAlert(error, "danger");
+    if (error === 'Invalid Credentials') {
+      setAlert(error, 'danger');
       clearErrors();
     }
     // eslint-disable-next-line
   }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
 
   const { email, password } = user;
@@ -31,8 +31,8 @@ const Login = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (email === "" || password === "") {
-      setAlert("Please fill in all fields", "danger");
+    if (email === '' || password === '') {
+      setAlert('Please fill in all fields', 'danger');
     } else {
       login({
         email,
@@ -43,29 +43,29 @@ const Login = (props) => {
 
   return (
     <div>
-      <h1>Account Login</h1>
+      <h2>Account Login</h2>
       <form onSubmit={onSubmit}>
         <div>
-          <label htmlFor="email">Email Address</label>
+          <label htmlFor='email'>Email Address</label>
           <input
-            type="email"
-            name="email"
+            type='email'
+            name='email'
             value={email}
             onChange={onChange}
             required
           />
         </div>
         <div>
-          <label htmlFor="password">Password</label>
+          <label htmlFor='password'>Password</label>
           <input
-            type="password"
-            name="password"
+            type='password'
+            name='password'
             value={password}
             onChange={onChange}
             required
           />
         </div>
-        <input type="submit" value="Login" />
+        <input type='submit' value='Login' />
       </form>
     </div>
   );
