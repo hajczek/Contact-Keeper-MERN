@@ -18,9 +18,11 @@ const Navbar = ({ title, icon }) => {
 
   const authLinks = (
     <Fragment>
-      <li>Hello {user && user.name}</li>
       <li>
-        <a onClick={onLogout} href='#!'>
+        Hello <i>{user && user.name}</i>
+      </li>
+      <li>
+        <a style={link} onClick={onLogout} href='#!'>
           <i className='fas fa-sign-out-alt' /> Logout
         </a>
       </li>
@@ -39,11 +41,11 @@ const Navbar = ({ title, icon }) => {
   );
 
   return (
-    <div className='navbar'>
+    <div style={navbar}>
       <h1>
         <i className={icon} /> {title}
       </h1>
-      <ul>{isAuthenticated ? authLinks : guestLinks}</ul>
+      <ul style={ul}>{isAuthenticated ? authLinks : guestLinks}</ul>
     </div>
   );
 };
@@ -57,4 +59,28 @@ Navbar.defaultProps = {
   title: 'Contact Keeper',
   icon: 'fas fa-id-card-alt',
 };
+
+const navbar = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  backgroundColor: '#d31262',
+  padding: '20px',
+  color: '#fff',
+  marginBottom: '40px',
+};
+
+const ul = {
+  listStyleType: 'none',
+  display: 'inline-flex',
+};
+
+const link = {
+  color: '#fff',
+  margin: '0 10px',
+  height: 'auto',
+  textDecoration: 'none',
+  fontSize: '1.3rem',
+};
+
 export default Navbar;

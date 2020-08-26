@@ -28,30 +28,6 @@ button:hover {
   opacity: 0.7;
 }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #d31262;
-  padding: 20px;
-  color: #fff;
-  margin-bottom: 40px;
-}
-
-.navbar ul {
-  list-style-type: none;
-  display: inline-flex;
-}
-
-.navbar ul li a {
-  color: #fff;
-  margin: 0 10px;
-  height: auto;
-  text-decoration: none;
-  font-size: 1.3rem;
-}
-
 .navbar ul li a:hover {
   opacity: 0.7;
 }
