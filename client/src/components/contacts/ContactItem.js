@@ -16,7 +16,7 @@ const ContactItem = ({ contact }) => {
   return (
     <div style={contactItem}>
       <h3>{name} </h3>
-      <ul className='list' style={list}>
+      <ul style={list}>
         {email && (
           <li>
             <i className='fas fa-envelope-open'></i>{' '}
