@@ -13,16 +13,40 @@ const Home = () => {
   }, []);
 
   return (
-    <div className='content'>
-      <div>
+    <div style={content}>
+      <div style={box}>
         <ContactForm />
       </div>
-      <div className='contactsBox'>
+      <div style={contactsBox}>
         <ContactFilter />
-        <Contacts />
+        <Contacts style={contactsItems} />
       </div>
     </div>
   );
+};
+
+const content = {
+  display: 'flex',
+};
+
+const box = {
+  display: 'flex',
+  width: '50%',
+  justifyContent: 'center',
+};
+
+const contactsBox = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignSelf: 'flex-start',
+  width: '50%',
+};
+
+const contactsItems = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  flexWrap: 'wrap',
+  width: '100%',
 };
 
 export default Home;

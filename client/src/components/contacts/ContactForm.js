@@ -46,9 +46,10 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={onSubmit} className='addContact'>
-      <h2>{current ? 'Edit Contact' : 'Add Contact'}</h2>
+    <form onSubmit={onSubmit} style={addContactForm}>
+      <h2 style={title}>{current ? 'Edit Contact' : 'Add Contact'}</h2>
       <input
+        style={input}
         type='text'
         placeholder='Name'
         name='name'
@@ -56,6 +57,7 @@ const ContactForm = () => {
         onChange={onChange}
       />
       <input
+        style={input}
         type='email'
         placeholder='Email'
         name='email'
@@ -63,13 +65,14 @@ const ContactForm = () => {
         onChange={onChange}
       />
       <input
+        style={input}
         type='text'
         placeholder='Phone'
         name='phone'
         value={phone}
         onChange={onChange}
       />
-      <div className='contactType'>
+      <div style={content}>
         <h5>Contact Type</h5>
         <input
           type='radio'
@@ -90,13 +93,14 @@ const ContactForm = () => {
       </div>
       <div>
         <input
+          style={submitBtn}
           type='submit'
           value={current ? 'Update Contact' : 'Add Contact'}
         />
       </div>
       {current && (
         <div>
-          <button onClick={clearAll} style={button}>
+          <button onClick={clearAll} style={clearBtn}>
             Clear
           </button>
         </div>
@@ -105,13 +109,49 @@ const ContactForm = () => {
   );
 };
 
-const button = {
+const addContactForm = {
+  display: 'flex',
+  flexDirection: 'column',
+  width: '350px',
+  fontSize: '1.2rem',
+};
+
+const title = {
+  fontSize: '2em',
+  paddingBttom: '50px',
+  textAlign: 'center',
+  marginBottom: '50px',
+};
+
+const content = {
+  display: 'flex',
+  width: '350px',
+  justifyContent: 'space-between',
+  marginBottom: '20px',
+};
+
+const input = {
+  marginBottom: '10px',
+  padding: '5px',
+};
+
+const submitBtn = {
+  backgroundColor: '#d31262',
+  border: '0',
+  color: '#fff',
+  fontSize: '1.3rem',
+  padding: '10px 0',
+  width: '100%',
+};
+
+const clearBtn = {
   width: '100%',
   backgroundColor: '#777',
   border: '0',
   color: '#fff',
   fontSize: '1.3rem',
   padding: '10px 0',
+  marginTop: '10px',
 };
 
 export default ContactForm;

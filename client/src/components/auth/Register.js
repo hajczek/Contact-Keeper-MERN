@@ -48,9 +48,9 @@ const Register = (props) => {
 
   return (
     <div>
-      <h2>Account Register</h2>
-      <form onSubmit={onSubmit} className='register'>
-        <div>
+      <h2 style={title}>Account Register</h2>
+      <form onSubmit={onSubmit} style={registerForm}>
+        <div style={content}>
           <label htmlFor='name'>Name</label>
           <input
             type='text'
@@ -60,7 +60,7 @@ const Register = (props) => {
             required
           />
         </div>
-        <div>
+        <div style={content}>
           <label htmlFor='email'>Email Address</label>
           <input
             type='email'
@@ -70,7 +70,7 @@ const Register = (props) => {
             required
           />
         </div>
-        <div>
+        <div style={content}>
           <label htmlFor='password'>Password</label>
           <input
             type='password'
@@ -81,7 +81,7 @@ const Register = (props) => {
             minLength='6'
           />
         </div>
-        <div>
+        <div style={content}>
           <label htmlFor='password2'>Confirm Password</label>
           <input
             type='password'
@@ -92,9 +92,40 @@ const Register = (props) => {
             minLength='6'
           />
         </div>
-        <input type='submit' value='Register' />
+        <input style={submitBtn} type='submit' value='Register' />
       </form>
     </div>
   );
 };
+
+const title = {
+  fontSize: '2em',
+  paddingBttom: '50px',
+  textAlign: 'center',
+  marginBottom: '50px',
+};
+
+const registerForm = {
+  display: 'flex',
+  flexDirection: ' column',
+  width: '400px',
+  margin: '0 auto',
+  fontSize: '1.2rem',
+};
+
+const content = {
+  display: 'flex',
+  width: '400px',
+  justifyContent: 'space-between',
+  marginBottom: '20px',
+};
+
+const submitBtn = {
+  backgroundColor: '#d31262',
+  border: '0',
+  color: '#fff',
+  fontSize: '1.3rem',
+  padding: '10px 0',
+};
+
 export default Register;

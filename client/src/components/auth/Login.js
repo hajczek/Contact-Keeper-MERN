@@ -43,9 +43,9 @@ const Login = (props) => {
 
   return (
     <div>
-      <h2>Account Login</h2>
-      <form onSubmit={onSubmit} className='login'>
-        <div>
+      <h2 style={title}>Account Login</h2>
+      <form onSubmit={onSubmit} style={loginForm}>
+        <div style={content}>
           <label htmlFor='email'>Email Address</label>
           <input
             type='email'
@@ -55,7 +55,7 @@ const Login = (props) => {
             required
           />
         </div>
-        <div>
+        <div style={content}>
           <label htmlFor='password'>Password</label>
           <input
             type='password'
@@ -65,9 +65,40 @@ const Login = (props) => {
             required
           />
         </div>
-        <input type='submit' value='Login' />
+        <input style={submitBtn} type='submit' value='Login' />
       </form>
     </div>
   );
 };
+
+const title = {
+  fontSize: '2em',
+  paddingBttom: '50px',
+  textAlign: 'center',
+  marginBottom: '50px',
+};
+
+const loginForm = {
+  display: 'flex',
+  flexDirection: 'column',
+  width: '400px',
+  margin: '0 auto',
+  fontSize: '1.2rem',
+};
+
+const content = {
+  display: 'flex',
+  width: '400px',
+  justifyContent: 'space-between',
+  marginBottom: '20px',
+};
+
+const submitBtn = {
+  backgroundColor: '#d31262',
+  border: '0',
+  color: '#fff',
+  fontSize: '1.3rem',
+  padding: '10px 0',
+};
+
 export default Login;

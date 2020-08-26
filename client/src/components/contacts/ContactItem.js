@@ -15,12 +15,7 @@ const ContactItem = ({ contact }) => {
 
   return (
     <div style={contactItem}>
-      <h3>
-        {name}{' '}
-        <span style={type === 'professional' ? professional : personal}>
-          {type.charAt(0).toUpperCase() + type.slice(1)}
-        </span>
-      </h3>
+      <h3>{name} </h3>
       <ul className='list' style={list}>
         {email && (
           <li>
@@ -34,6 +29,9 @@ const ContactItem = ({ contact }) => {
           </li>
         )}
       </ul>
+      <span style={type === 'professional' ? professional : personal}>
+        {type.charAt(0).toUpperCase() + type.slice(1)}
+      </span>
       <p>
         <button onClick={() => setCurrent(contact)} style={button}>
           Edit
@@ -51,13 +49,14 @@ ContactItem.propTypes = {
 };
 
 const contactItem = {
-  display: 'block',
-  width: '48%',
+  display: 'flex',
+  width: '100%',
   backgroundColor: '#eee',
   padding: '20px',
   marginBottom: '10px',
   fontSize: '1.1rem',
   lineHeight: '1.6',
+  justifyContent: 'space-between',
 };
 
 const professional = {

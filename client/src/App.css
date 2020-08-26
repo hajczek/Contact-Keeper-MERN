@@ -23,111 +23,20 @@ input[type='submit'] {
   outline: none;
 }
 
-button:hover {
-  cursor: pointer;
-  opacity: 0.7;
-}
-
-.navbar ul li a:hover {
-  opacity: 0.7;
-}
-
-/* Container */
-.container {
-  display: flex;
-  flex-direction: column;
-}
-
-.container h2 {
-  font-size: 2em;
-  padding-bottom: 50px;
-  text-align: center;
-}
-
-.register,
-.login {
-  display: flex;
-  flex-direction: column;
-  width: 350px;
-  margin: 0 auto;
-  font-size: 1.2rem;
-}
-
-.register div,
-.login div {
-  display: flex;
-  width: 350px;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-input {
-  padding: 2px;
-  font-size: 1.1rem;
-}
-
-input[type='submit'] {
-  background-color: #d31262;
-  border: 0;
-  color: #fff;
-  font-size: 1.3rem;
-  padding: 10px 0;
-}
-
+button:hover,
 input[type='submit']:hover {
   cursor: pointer;
   opacity: 0.7;
 }
 
-.content {
-  display: flex;
+a:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
-.content div {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-
-.addContact {
-  display: flex;
-  flex-direction: column;
-  width: 350px;
-  font-size: 1.2rem;
-}
-
-.addContact div {
-  display: flex;
-  width: 350px;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.addContact input {
-  margin-bottom: 10px;
-  padding: 5px;
-}
-
-.addContact input[type='submit'] {
-  background-color: #d31262;
-  border: 0;
-  color: #fff;
-  font-size: 1.3rem;
-  padding: 10px 0;
-  width: 100%;
-}
-
-.contactsBox {
-  display: flex;
-  flex-direction: column;
-  align-self: flex-start;
-  width: 50%;
-}
-
-.contactsBox div:last-child {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+input {
+  padding: 2px;
+  font-size: 1.1rem;
 }
 
 /* Animation (Add After) */
